@@ -7,8 +7,10 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 
 mongoose.connect("mongodb://localhost/workout", {
-  useNewUrlParser: true,
-  useFindAndModify: false
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
 });
 
 app.use(express.static("public", { extensions: ["html"] }));
